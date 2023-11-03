@@ -1,0 +1,98 @@
+html {
+  /* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  /* Chrome, Edge, and Safari */
+}
+html body {
+  margin: 0;
+  padding: 0px;
+  font-size: 16px;
+  height: 5000px;
+  overflow-x: hidden;
+  /* Usuwam tym pasek, ktory sie utworzyl*/
+}
+html * {
+  scrollbar-width: none;
+  scrollbar-color: #000000 #ffffff;
+}
+html *::-webkit-scrollbar {
+  width: 16px;
+}
+html *::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+html *::-webkit-scrollbar-thumb {
+  background-color: #000000;
+  border-radius: 11px;
+  border: 4px solid #ffffff;
+}
+
+.section1 {
+  height: 100vh;
+}
+.section1 img {
+  height: 100vh;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  /* Dopasowywuje zdjecie*/
+  filter: brightness(0.6) blur(3px);
+  position: absolute;
+}
+.section1 ul {
+  align-items: center;
+}
+.section1 ul li {
+  align-items: center;
+  margin-left: 35px;
+}
+.section1 ul li .nav-link {
+  font-size: 20px;
+  transition: all 0.2s;
+  position: relative;
+}
+.section1 ul li .nav-link:hover {
+  transform: translatey(4%);
+  font-size: 21px;
+}
+.section1 ul li .nav-link:hover::after {
+  content: "";
+  height: 5px;
+  width: 100%;
+  background-color: black;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.section2 {
+  height: 100vh;
+  margin-top: 100px;
+}
+.section2 h1 {
+  display: flex;
+  justify-content: center;
+  font-weight: 600;
+  color: rgba(109, 109, 109, 0.5215686275);
+}
+.section2 .objects .object {
+  display: flex;
+  justify-content: center;
+}
+.section2 .objects .object .cont {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style-type: none;
+  height: 100%;
+  width: 100%;
+}
+.section2 .objects .object .cont li {
+  margin-bottom: 35px;
+  border: 1px solid red;
+  display: flex;
+  /* Znalezc sposob na*/
+  width: 60%;
+  height: 25vh;
+}
