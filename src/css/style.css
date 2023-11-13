@@ -1,137 +1,175 @@
-html {
-  scroll-behavior: smooth;
-  /* ===== Scrollbar CSS ===== */
-  /* Firefox */
-  /* Chrome, Edge, and Safari */
-}
-html body {
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
+* {
   margin: 0;
-  padding: 0px;
-  font-size: 16px;
-  overflow-x: hidden;
-  /* Usuwam tym pasek, ktory sie utworzyl*/
-}
-html * {
-  scrollbar-width: none;
-  scrollbar-color: #000000 #ffffff;
-}
-html *::-webkit-scrollbar {
-  width: 16px;
-}
-html *::-webkit-scrollbar-track {
-  background: #ffffff;
-}
-html *::-webkit-scrollbar-thumb {
-  background-color: #000000;
-  border-radius: 11px;
-  border: 4px solid #ffffff;
+  padding: 0;
 }
 
-.section1 {
-  height: 100vh;
+body {
+  font-family: "Open Sans", sans-serif;
 }
-.section1 img {
-  height: 100vh;
+
+header {
+  position: relative;
+  padding: 0 2rem;
+}
+
+.navbar {
   width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  /* Dopasowywuje zdjecie*/
-  filter: brightness(0.6) blur(3px);
-  position: absolute;
+  height: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-.section1 .Scroll-Down {
+.navbar .contact {
+  text-decoration: none;
+  background-color: orange;
+  color: white;
+  border-radius: 20px;
+  padding: 0.5rem 2rem;
+  font-weight: 600;
+}
+.navbar .logo a {
+  font-size: 34px;
+  font-weight: 600;
+  text-decoration: none;
+  color: black;
+}
+.navbar .links {
+  /* ul*/
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin: 0;
+  list-style-type: none;
+}
+.navbar .links li a {
+  color: black;
+  text-decoration: none;
+  font-weight: 600;
+}
+.navbar .links .submenu {
+  display: block;
+}
+.navbar .links .submenu a:hover {
+  background-color: rgb(167, 197, 197);
+}
+.navbar .links .submenu .dropdown {
+  border-radius: 15px;
+  padding: 0 0 0 25px;
+  width: 150px;
+  background-color: rgb(170, 184, 184);
   position: absolute;
-  border-radius: 5em;
-  height: 70px;
-  width: 120px;
-  right: 0;
-  left: 0;
-  margin: auto;
-  bottom: 10%;
-  font-size: 30px;
+  z-index: 999;
+  display: none;
+}
+.navbar .links .submenu .dropdown li {
+  display: block;
+}
+.navbar .submenu:hover .dropdown {
+  display: block;
+}
+.navbar .toggle_btn {
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none;
+}
+
+.dropdown_menu {
+  position: absolute;
+  right: 2rem;
+  top: 60px;
+  width: 300px;
+  height: 0;
+  background-color: rgb(173, 169, 169);
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
+  border-radius: 30px;
+  overflow: hidden;
+}
+.dropdown_menu li {
+  padding: 0.7rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid white;
 }
-.section1 .Scroll-Down a {
-  text-decoration: none;
-  color: white;
+.dropdown_menu .contact {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
-.section1 .Scroll-Down a i {
-  animation: scroll 2s infinite;
+
+.dropdown_menu.open {
+  height: 240px;
+}
+
+.home-page {
+  height: 90vh;
+}
+.home-page .scroll-down {
+  left: 0;
+  right: 0;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  width: 100px;
+  height: 50px;
+  bottom: 10%;
+}
+.home-page .scroll-down a {
+  font-size: 36px;
+  color: black;
+  animation: scroll 3s infinite;
 }
 @keyframes scroll {
   0% {
-    opacity: 1;
+    opacity: 0;
     transform: translateY(-15px);
   }
   100% {
-    opacity: 0;
-    transform: translateY(10px);
+    opacity: 1;
+    transform: translateY(15px);
   }
 }
-.section1 .Scroll-Down:hover {
-  width: 120px;
+.home-page .scroll-down a:hover {
+  transform: translateY(-5px);
 }
-.section1 ul {
-  align-items: center;
+.home-page .box {
+  height: 100%;
 }
-.section1 ul li {
-  align-items: center;
-  margin-left: 35px;
-}
-.section1 ul li .nav-link {
-  font-size: 20px;
-  transition: all 0.2s;
+.home-page .box .main-text {
   position: relative;
-}
-.section1 ul li .nav-link:hover {
-  transform: translatey(4%);
-  font-size: 21px;
-}
-.section1 ul li .nav-link:hover::after {
-  content: "";
-  height: 5px;
   width: 100%;
-  background-color: black;
-  position: absolute;
-  bottom: 0;
-  left: 0;
+  top: 30%;
+}
+.home-page .box .main-text p {
+  line-height: 40px;
+}
+.home-page .box .main-text .two {
+  font-weight: 600;
 }
 
-.section2 {
+.information {
   height: 100vh;
-  margin-top: 100px;
 }
-.section2 h1 {
-  display: flex;
-  justify-content: center;
-  font-weight: 600;
-  color: rgba(109, 109, 109, 0.5215686275);
+
+@media (max-width: 992px) {
+  .navbar .links,
+  .navbar .contact {
+    display: none;
+  }
+  .navbar .toggle_btn {
+    display: block;
+  }
+  .dropdown_menu {
+    display: block;
+  }
 }
-.section2 .objects .object {
-  border: 1px solid black;
-  display: flex;
-  justify-content: center;
-}
-.section2 .objects .object .cont {
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  list-style-type: none;
-  height: 100%;
-  width: 100%;
-}
-.section2 .objects .object .cont ul {
-  border: 1px solid black;
-}
-.section2 .objects .object .cont li {
-  margin-bottom: 35px;
-  border: 1px solid red;
-  display: flex;
-  /* Znalezc sposob na*/
-  width: 60%;
-  height: 25vh;
+@media (max-width: 576px) {
+  .dropdown_menu {
+    left: 2rem;
+    width: unset;
+  }
 }
