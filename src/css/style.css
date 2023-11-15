@@ -7,7 +7,7 @@
 body {
   font-family: "Open Sans", sans-serif;
   scroll-behavior: smooth;
-  --navbar-height:60px;
+  --navbar-height: 60px;
 }
 
 header {
@@ -125,7 +125,6 @@ header {
   height: 99vh;
   overflow-x: hidden;
   z-index: -1;
-  opacity: 0.7;
 }
 .home-page .vid-box .video {
   position: absolute;
@@ -166,13 +165,11 @@ header {
   transform: translateY(-5px);
 }
 .home-page .box {
-  height: 100%;
+  width: 100%;
 }
 .home-page .box .main-text {
   position: absolute;
-  width: 100%;
   top: 30%;
-  right: 0;
 }
 .home-page .box .main-text p {
   line-height: 40px;
